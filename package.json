@@ -1,0 +1,26 @@
+{
+  "name": "wings",
+  "version": "0.0.1",
+  "description": "Fast, small, bleeding edge web framework for Node js",
+  "main": "wing.js",
+  "scripts": {
+    "test": "nodemon test/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imagineeeinc/wings-js.git"
+  },
+  "keywords": [
+    "wings-js",
+    "wings",
+    "express",
+    "express-js",
+    "web-framework"
+  ],
+  "author": "Imagineee",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/imagineeeinc/wings-js/issues"
+  },
+  "homepage": "https://github.com/imagineeeinc/wings-js#readme"
+}
