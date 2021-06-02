@@ -1,3 +1,5 @@
 ./test
 
-wing.js
+./wing.js
+
+./.gitignore
