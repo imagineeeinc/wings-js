@@ -10,8 +10,7 @@ class server {
     }
     use(type, ...args) {
         if (type === 'files') {
-            this.files = path.join(this.loc, args[0])
-            console.log(this.files)
+            this.files = path.join(this.loc, args[0]+"/")
         }
     }
     listen(port, callback) {
@@ -37,25 +36,24 @@ class server {
                 let ctx = {req: req, res: res}
                 return this._stack[i].callback(ctx)
             } else {
-                console.log(req.url)
-                fs.readdir(this.loc, (err, files) => {
+                fs.readdir(this.files, (err, files) => {
                     if (err) {
                         console.error(err)
                     }
                     let di = files
                     for (var l=0;l < di.length;l++) {
-                        if (req.url === di[l]) {
+                        if (req.url === "/" + di[l]) {
                             //res.setHeader('Content-Type', 'text/html')
                             //res = customRes(res, this)
                             res.statusCode = 200
-                            fs.readFile(th.loc + "/" + di[l], function(err, data) {
+                            fs.readFile(this.files + di[l], function(err, data) {
                                 if (err) {
                                     console.error(err)
                                 }
-                                t.send(data)
+                                res.end(data)
                             })
                         } else {
-                            res.statusCode = 400
+                            res.statusCode = 404
                         }
                     }
                 })

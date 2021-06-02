@@ -1,10 +1,10 @@
 {
-  "name": "wings",
-  "version": "0.0.1",
+  "name": "@imagineee/wing-js",
+  "version": "1.0.0",
   "description": "Fast, small, bleeding edge web framework for Node js",
-  "main": "wing.js",
+  "main": "wing.min.js",
   "scripts": {
-    "test": "nodemon test/test.js"
+    "minify": "terser --compress --mangle --output wing.min.js wing.js"
   },
   "repository": {
     "type": "git",
@@ -17,10 +17,13 @@
     "express-js",
     "web-framework"
   ],
-  "author": "Imagineee",
+  "author": "imagineee",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/imagineeeinc/wings-js/issues"
   },
-  "homepage": "https://github.com/imagineeeinc/wings-js#readme"
+  "homepage": "https://github.com/imagineeeinc/wings-js#readme",
+  "devDependencies": {
+    "terser": "^5.7.0"
+  }
 }
